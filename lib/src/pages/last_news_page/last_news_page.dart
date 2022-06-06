@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_letna/src/pages/last_news_page/cubit/news_cubit.dart';
+import 'package:news_letna/src/widgets/image_news_widget.dart';
+
+import '/src/pages/last_news_page/cubit/news_cubit.dart';
+import '/src/utils/utils_for_internet_browser.dart';
 
 class LastNewsPage extends StatelessWidget {
   const LastNewsPage({Key? key}) : super(key: key);
@@ -47,13 +50,25 @@ Widget listBuilder(BuildContext context, NewsLoadedState state) {
     itemCount: state.news.length,
     itemBuilder: (BuildContext context, int index) {
       final item = state.news[index];
-      return ListTile(
-        title: Text(
-          item.title!,
-          maxLines: 8,
-          textAlign: TextAlign.center,
-          overflow: TextOverflow.ellipsis,
-        ),
+      return Column(
+        children: [
+          ListTile(
+            onTap: () => launchUniversalLink(item.link!),
+            leading: ImageNewsWidget(urlImage: item.enclosure!.url!),
+            trailing: Icon(
+              Icons.keyboard_arrow_right_outlined,
+              color: Colors.grey[400],
+              size: 25,
+            ),
+            title: Text(
+              item.title!,
+              maxLines: 8,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+          const Divider(color: Colors.black45),
+        ],
       );
     },
   );
