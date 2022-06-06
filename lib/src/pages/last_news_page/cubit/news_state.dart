@@ -5,9 +5,8 @@ abstract class NewsState {}
 
 class NewsInitial extends NewsState {}
 
-//запрашиваем события
 class NewsLoadedState extends NewsState {
-  final List<Rss1Item> news;
+  final List<RssItem> news;
 
   NewsLoadedState(this.news);
 }

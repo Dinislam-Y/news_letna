@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:dart_rss/domain/rss1_feed.dart';
-import 'package:dart_rss/domain/rss1_item.dart';
+import 'package:dart_rss/dart_rss.dart';
 import 'package:meta/meta.dart';
 import 'package:http/http.dart' as http;
 
@@ -13,8 +12,8 @@ class NewsCubit extends Cubit<NewsState> {
 
   Future<void> loadNews() async {
     try {
-      final response = await http.Client().get(_urlTop7);
-      final rssFeed = Rss1Feed.parse(response.body);
+      final response = await http.get(_urlTop7);
+      final rssFeed = RssFeed.parse(response.body);
       emit(NewsLoadedState(rssFeed.items));
     } catch (e) {
       emit(NewsError('Ошибка!!!'));
