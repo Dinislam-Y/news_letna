@@ -1,5 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.news_letna">
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <queries>
+        <intent>
+            <action android:name="android.internet.action.VIEW"/>
+            <category android:name="android.internet.category.BROWSABLE"/>
+            <data android:scheme="https" />
+        </intent>
+    </queries>
    <application
         android:label="news_letna"
         android:name="${applicationName}"
