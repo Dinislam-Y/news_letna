@@ -23,7 +23,7 @@ class ImageNewsWidget extends StatelessWidget {
         height: height,
         width: weight,
         alignment: Alignment.center,
-        fit: BoxFit.fill,
+        fit: BoxFit.cover,
       ),
     );
   }

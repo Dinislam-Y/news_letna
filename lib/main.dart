@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'src/pages/last_news_page/last_news_page.dart';
+import '/src/pages/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,13 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const Text('Новости'),
-        ),
-        body: const LastNewsPage(),
-      ),
+      home: const MainScreen(),
     );
   }
 }
