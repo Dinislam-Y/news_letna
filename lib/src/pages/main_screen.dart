@@ -17,6 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
+    onItemTapped(selectIndex);
   }
 
   void onItemTapped(int index) {
@@ -45,6 +46,20 @@ class _MainScreenState extends State<MainScreen> {
         title: const Text('Новости'),
       ),
       body: buildCurrentWidget(selectIndex),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: onItemTapped,
+        currentIndex: selectIndex,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.seven_mp),
+            label: 'Топ 7 новостей',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.twenty_four_mp),
+            label: 'За последние 24 часа',
+          ),
+        ],
+      ),
     );
   }
 }
