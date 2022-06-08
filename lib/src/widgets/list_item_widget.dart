@@ -1,6 +1,5 @@
 import 'package:dart_rss/dart_rss.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:news_letna/src/widgets/image_news_widget.dart';
 
 class ListItemWidget extends StatelessWidget {
