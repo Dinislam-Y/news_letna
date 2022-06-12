@@ -1,11 +1,12 @@
 import 'package:dart_rss/dart_rss.dart';
 import 'package:flutter/material.dart';
-import 'package:news_letna/src/widgets/image_news_widget.dart';
 
-class ListItemWidget extends StatelessWidget {
+import '/src/widgets/image_news_widget.dart';
+
+class LastNewsItemWidget extends StatelessWidget {
   final RssItem item;
 
-  const ListItemWidget({Key? key, required this.item}) : super(key: key);
+  const LastNewsItemWidget({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

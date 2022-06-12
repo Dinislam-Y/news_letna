@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:news_letna/src/api/src/line_rss_api.dart';
 
-import '/src/pages/last24_news_page/last24_news_page.dart';
-import '/src/pages/last_news_page/last_news_page.dart';
+import '/src/pages/base_news_page/last_news24_page.dart';
+import '/src/pages/base_news_page/last_news_page.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -29,10 +30,10 @@ class _MainScreenState extends State<MainScreen> {
 
   Widget buildCurrentWidget(int type) {
     if (type == 0) {
-      return const LastNewsPage();
+      return LastNewsPage(newsProvider: LineLastNewsProvider());
     }
     if (type == 1) {
-      return const Last24NewsPage();
+      return LastNews24Page(newsProvider: LineLast24NewsProvider());
     } else {
       return Container();
     }
