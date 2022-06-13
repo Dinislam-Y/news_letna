@@ -1,6 +1,10 @@
-import 'package:dart_rss/dart_rss.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
+import 'package:dart_rss/dart_rss.dart';
+
+// Project imports:
 import '/src/widgets/image_news_widget.dart';
 
 class LastNewsItemWidget extends StatelessWidget {
@@ -10,40 +14,45 @@ class LastNewsItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(8),
-      padding: const EdgeInsets.all(8),
-      decoration: const BoxDecoration(
-        color: Colors.white70,
-        borderRadius: BorderRadius.all(
-          Radius.circular(6),
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.blueGrey,
-            blurRadius: 4,
-            spreadRadius: 2,
-            blurStyle: BlurStyle.normal,
+    return GestureDetector(
+      onTap: () {
+        print('on tap');
+      },
+      child: Container(
+        margin: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
+        decoration: const BoxDecoration(
+          color: Colors.white70,
+          borderRadius: BorderRadius.all(
+            Radius.circular(6),
           ),
-        ],
-      ),
-      child: IntrinsicHeight(
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Expanded(
-              flex: 1,
-              child: ImageNewsWidget(
-                urlImage: item.enclosure!.url!,
-              ),
-            ),
-            Expanded(
-              flex: 3,
-              child: _TextNews(
-                item: item,
-              ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.blueGrey,
+              blurRadius: 4,
+              spreadRadius: 2,
+              blurStyle: BlurStyle.normal,
             ),
           ],
+        ),
+        child: IntrinsicHeight(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                flex: 1,
+                child: ImageNewsWidget(
+                  urlImage: item.enclosure!.url!,
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: _TextNews(
+                  item: item,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

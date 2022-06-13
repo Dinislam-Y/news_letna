@@ -1,9 +1,13 @@
-import 'package:dart_rss/dart_rss.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'cubit/news_cubit.dart';
 
+// Package imports:
+import 'package:dart_rss/dart_rss.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+// Project imports:
 import '/src/api/src/line_rss_api.dart';
+import 'cubit/news_cubit.dart';
 
 abstract class BaseNewsPage extends StatelessWidget {
   final LineRssAip _newsProvider;

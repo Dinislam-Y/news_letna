@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import '/src/pages/main_screen.dart';
 
 void main() {

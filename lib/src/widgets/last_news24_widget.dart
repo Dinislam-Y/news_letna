@@ -1,6 +1,10 @@
-import 'package:dart_rss/dart_rss.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Package imports:
+import 'package:dart_rss/dart_rss.dart';
+
+// Project imports:
 import '/src/widgets/image_news_widget.dart';
 
 class LastNews24ItemWidget extends StatelessWidget {

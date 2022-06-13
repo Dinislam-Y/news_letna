@@ -1,6 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:news_letna/src/api/src/line_rss_api.dart';
 
+// Project imports:
+import '/src/api/src/line_rss_api.dart';
 import '/src/pages/base_news_page/last_news24_page.dart';
 import '/src/pages/base_news_page/last_news_page.dart';
 
