@@ -3,13 +3,13 @@
 This project used:
 
 Dart
-
 Flutter
-
-provider
-
-import_sorter
-
-percent_indicator
+* dart_rss
+* cached_network_image
+* http
+* bloc
+* flutter_bloc
+* url_launcher
+* import_sorter
 
 Application video:
